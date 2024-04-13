@@ -33,6 +33,8 @@ export function VerticalStepper() {
     const nextStep = () => setActive((current) => (current < 3 ? current + 1 : current));
     const prevStep = () => setActive((current) => (current > 0 ? current - 1 : current));
 
+    const [probability, setProbability] = useState({});
+    const [status, setStatus] = useState('unknown');
     const [genomeFile, setGenomeFile] = useState<FileWithPath[] | null>(null);
 
     const [dnaFile, setDnaFile] = useState<FileWithPath[] | null>(null);
@@ -45,18 +47,18 @@ export function VerticalStepper() {
     };
 
     const handleRunAnalysis = async () => {
-        console.log('here');
         const data = await calculateSubgenomes();
-        console.log(data);
+        setProbability(data.probability);
+        setStatus(data.response);
     };
 
     return (
         <>
             <Stepper
-              className={classes.stepper}
-              active={active}
-              onStepClick={setActive}
-              allowNextStepsSelect={false}>
+                className={classes.stepper}
+                active={active}
+                onStepClick={setActive}
+                allowNextStepsSelect={false}>
                 <Stepper.Step label="First step" description="Upload genome">
                     <Grid className={classes.grid}>
                         <Grid.Col span={6} style={{ width: '500px' }}>
@@ -66,9 +68,9 @@ export function VerticalStepper() {
                         </Grid.Col>
                         <Grid.Col span={6}>
                             <DropzoneFiles
-                              file={genomeFile}
-                              handleDelete={handleGenomeDelete}
-                              onDrop={(file) => setGenomeFile(file)} />
+                                file={genomeFile}
+                                handleDelete={handleGenomeDelete}
+                                onDrop={(file) => setGenomeFile(file)} />
                         </Grid.Col>
                     </Grid>
                 </Stepper.Step>
@@ -81,9 +83,9 @@ export function VerticalStepper() {
                         </Grid.Col>
                         <Grid.Col span={6}>
                             <DropzoneFiles
-                              file={dnaFile}
-                              handleDelete={handleDnaDelete}
-                              onDrop={(file) => setDnaFile(file)}
+                                file={dnaFile}
+                                handleDelete={handleDnaDelete}
+                                onDrop={(file) => setDnaFile(file)}
                             />
                         </Grid.Col>
                     </Grid>
@@ -113,6 +115,14 @@ export function VerticalStepper() {
                         <Grid.Col span={6} m="auto">
                             <Text>
                                 In this step DNA analysis is performed.
+                            </Text>
+                            
+                            {
+                            Object.values(probability).map((value, index) => {
+                                return <Text key={index}>Probability for {index}: {value}</Text>
+                            })}
+                            <Text>
+                                Status: {status}
                             </Text>
                             <Button justify="center" mt="xl" onClick={handleRunAnalysis}>Run analysis</Button>
                         </Grid.Col>
