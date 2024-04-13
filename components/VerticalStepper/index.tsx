@@ -8,7 +8,7 @@ import DropzoneFiles from '@/components/DropzoneFiles';
 
 export function VerticalStepper() {
 
-    function calculateSubgenomes() {
+    async function calculateSubgenomes() {
         const message = {
             genome: 'string',
             subgenome: 'string',
@@ -44,8 +44,9 @@ export function VerticalStepper() {
         setDnaFile(null);
     };
 
-    const handleRunAnalysis = () => {
-        const data = calculateSubgenomes();
+    const handleRunAnalysis = async () => {
+        console.log('here');
+        const data = await calculateSubgenomes();
         console.log(data);
     };
 
