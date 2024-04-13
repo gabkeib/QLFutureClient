@@ -16,23 +16,22 @@ export function ColorSchemeToggle() {
 }
 
 function calculateSubgenomes() {
-  let message = {
-    genome: "string",
-    subgenome: "string"
-  }
-  let stringifiedMessage = JSON.stringify(message)
-  console.log(stringifiedMessage)
+  const message = {
+    genome: 'string',
+    subgenome: 'string',
+  };
+  const stringifiedMessage = JSON.stringify(message);
   fetch('https://qlfuturebackend.onrender.com/genome',
     {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        'Accept': 'application/json',
+        Accept: 'application/json',
       },
-      body: stringifiedMessage
+      body: stringifiedMessage,
     })
     .then(response => response.json())
     .then(data => {
       console.log(data);
-    })
+    });
 }

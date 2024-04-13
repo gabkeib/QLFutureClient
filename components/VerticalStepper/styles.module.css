@@ -1,0 +1,21 @@
+.stepper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin-top: 30px;
+
+}
+
+.taskTitle {
+    font-size: rem(40px);
+    font-weight: 800;
+    margin: 40px;
+}
+
+.grid {
+    margin-top: 30px;
+    height: 270px;
+    justify-content: center;
+}
