@@ -5,7 +5,7 @@ import { motion, useScroll, useSpring, useTransform } from 'framer-motion';
 import { useEffect, useRef } from 'react';
 import InfoCard from '@/components/InfoCard';
 import classes from './styles.module.css';
-import {Center} from "@mantine/core";
+import { Center, Group } from "@mantine/core";
 
 export default function StoryTimeline() {
     const ref = useRef(null);
@@ -39,6 +39,15 @@ export default function StoryTimeline() {
                 <p>Story Timeline</p>
             </InfoCard>
             <motion.div className={classes.progress} style={{ scaleX }} />
+            <div className={classes.footer}>
+                <div className={classes.inner}>
+                    <Center>
+                        <Group className={classes.links} display={"block"}>VUQuantum2024 &nbsp; Gabrielius Keibas, &nbsp;
+                        Marco Marcozzi, &nbsp;
+                        Pijus Petkevičius</Group>
+                    </Center>
+                </div>
+            </div>
         </div>
     );
 }
