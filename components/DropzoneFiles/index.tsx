@@ -19,37 +19,14 @@ export default function DropzoneFiles({ onDrop, handleDelete, file }: DropzoneFi
               accept={IMAGE_MIME_TYPE}
               onDrop={onDrop}
               activateOnClick={!file}
+              disabled
             >
-                <Group justify="center" gap="xl" mih={220} style={{ pointerEvents: 'none' }}>
-                    <Dropzone.Accept>
-                        <IconUpload
-                          style={{ width: rem(52), height: rem(52), color: 'var(--mantine-color-blue-6)' }}
-                          stroke={1.5}
-                        />
-                    </Dropzone.Accept>
-                    <Dropzone.Reject>
-                        <IconX
-                          style={{ width: rem(52), height: rem(52), color: 'var(--mantine-color-red-6)' }}
-                          stroke={1.5}
-                        />
-                    </Dropzone.Reject>
-                    <Dropzone.Idle>
-                        <IconPhoto
-                          style={{ width: rem(52), height: rem(52), color: 'var(--mantine-color-dimmed)' }}
-                          stroke={1.5}
-                        />
-                    </Dropzone.Idle>
-
+                <Group justify="center" gap="xl" style={{ pointerEvents: 'none' }}>
                     <div>
                         {!file ? <>
-                            <Text size="xl" inline>
-                                Drag images here or click to select files
-                            </Text>
-                            <Text size="sm" c="dimmed" inline mt={7}>
-                        Attach as many files as you like, each file should not exceed 5mb
-                            </Text>
+                            <Text ta="center">Drop images here</Text>
                                  </> : <>
-                            <FileCard file={file[0]} handleDelete={handleDelete} />
+                            <FileCard file={file[0].name} handleDelete={handleDelete} />
                                        </>
                     }
                     </div>

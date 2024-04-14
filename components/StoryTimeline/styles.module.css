@@ -1,0 +1,22 @@
+.timeline{
+    padding-top: 200px;
+}
+
+.progress {
+    position: fixed;
+    left: 0;
+    right: 0;
+    height: 5px;
+    background: white;
+    bottom: 100px;
+}
+
+.title {
+    font-size: rem(100px);
+    font-weight: 900;
+    letter-spacing: rem(-2px);
+    color: light-dark(var(--mantine-color-black), var(--mantine-color-white));
+    text-align: center;
+    margin-left: 20px;
+    margin-right: 20px;
+}

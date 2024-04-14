@@ -1,22 +1,24 @@
-import { ActionIcon, Grid } from '@mantine/core';
+import {ActionIcon, Card, Grid, Paper} from '@mantine/core';
 import { IconSquareX } from '@tabler/icons-react';
-import { FileWithPath } from '@mantine/dropzone';
+import classes from './styles.module.css';
 
 type FileCardProps = {
     handleDelete: () => void;
-    file: FileWithPath;
+    file: string;
 };
 
 export default function FileCard({ handleDelete, file }: FileCardProps) {
     return (
-        <Grid style={{ pointerEvents: 'auto' }}>
-            <Grid.Col span="auto">{file.name}</Grid.Col>
-            <Grid.Col span={3}>
-                <ActionIcon onClick={handleDelete}>
-                    <IconSquareX />
-                </ActionIcon>
-            </Grid.Col>
+        <Paper m="md" shadow="xs" withBorder p="sm">
+            <Grid style={{ pointerEvents: 'auto' }}>
+                <Grid.Col span="auto">{file}</Grid.Col>
+                <Grid.Col span={1} me="md">
+                    <ActionIcon className={classes.button} onClick={handleDelete}>
+                        <IconSquareX className={classes.button} />
+                    </ActionIcon>
+                </Grid.Col>
 
-        </Grid>
+            </Grid>
+        </Paper>
     );
 }
