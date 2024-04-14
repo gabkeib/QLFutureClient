@@ -20,3 +20,27 @@
     margin-left: 20px;
     margin-right: 20px;
 }
+
+.taskSmallTitle {
+    font-size: rem(20px);
+    font-weight: 800;
+    margin: 20px;
+    justify-content: center;
+    text-align: center;
+}
+
+.taskSmallTitleBigger {
+    font-size: rem(30px);
+    font-weight: 800;
+    margin: 20px;
+    justify-content: center;
+    text-align: center;
+}
+
+.taskSmallTitleEvenBigger {
+    font-size: rem(80px);
+    font-weight: 800;
+    margin: 20px;
+    justify-content: center;
+    text-align: center;
+}

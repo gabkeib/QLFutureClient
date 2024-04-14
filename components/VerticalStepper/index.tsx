@@ -167,7 +167,7 @@ export function VerticalStepper() {
               onStepClick={setActive}
               allowNextStepsSelect={false}
               color="orange">
-                <Stepper.Step label="First step" description="Upload genome">
+                <Stepper.Step label="First step" description="Upload gene">
                     <Grid className={classes.grid}>
                         <Grid.Col span={6} style={{ width: '500px' }}>
                             <Text className={classes.taskTitle}>
@@ -192,7 +192,7 @@ export function VerticalStepper() {
                         </Grid.Col>
                     </Grid>
                 </Stepper.Step>
-                <Stepper.Step label="Second step" description="Upload DNA">
+                <Stepper.Step label="Second step" description="Upload genome">
                     <Grid className={classes.grid}>
                         <Grid.Col span={6} style={{ width: '500px' }}>
                             <Text className={classes.taskTitle}>
