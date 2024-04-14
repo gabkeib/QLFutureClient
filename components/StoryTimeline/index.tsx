@@ -47,7 +47,7 @@ export default function StoryTimeline() {
                             Quantum (Ramesh-Vinay) - O(√N + √M)
                         </Text>
                         <Text className={classes.taskSmallTitleBigger}>
-                            Our solution - O(N/M)
+                            Our solution - O(N - M)
                         </Text>
                 </div>
             </InfoCard>

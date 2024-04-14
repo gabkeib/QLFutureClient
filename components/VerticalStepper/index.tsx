@@ -246,7 +246,7 @@ export function VerticalStepper() {
                         </Grid.Col>
                     </Grid>
                 </Stepper.Step>
-                <Stepper.Step label="Final step" description="Get full access">
+                <Stepper.Step label="Results" description="View analysis results">
                     <Grid className={classes.grid}>
                         <Grid.Col span={6} style={{ width: '500px' }}>
                             <Text className={classes.taskTitle}>
